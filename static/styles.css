@@ -13,12 +13,15 @@ body {
 .fancy_name
 {
   font-size: 4rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(45deg, #ff4b2b, #ff416c, #ff6a00, #ffd500);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
-    animation: glow 2s ease-in-out infinite alternate;
+    font-family: 'Georgia', serif;
+    color: #fff;
+    text-shadow:
+        0 0 10px #ff6a00,
+        0 0 20px #ff6a00,
+        0 0 30px #ff6a00,
+        0 0 40px #ff416c,
+        0 0 70px #ff416c;
+    animation: pulse 2s infinite alternate;
     letter-spacing: 2px;
 }
 
@@ -126,4 +129,31 @@ body {
   transform: scale(1.05);
   background: linear-gradient(135deg, #00ffe7, #0077ff);
 }
+.flower-img {
+  position: fixed;
+  bottom: 50px;
+  width: 280px;
+  height: 260;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: bloomFlower 2s ease-out forwards;
+  z-index: 0;
+  pointer-events: none;
+}
 
+.flower-img.left {
+  left: 10px;
+  animation-delay: 1s;
+}
+
+.flower-img.right {
+  right: 10px;
+  animation-delay: 1.5s;
+}
+
+@keyframes bloomFlower {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
